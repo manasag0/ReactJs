@@ -1,8 +1,12 @@
-function mainContainer(reactEle,container){
+function customRendor(reactEle,container){
     const domEl = document.createElement(reactEle.type)
     domEl.innerHTML = reactEle.children;
-    document.setAttribute('href',reactEle.props.href)
-    document.setAttribute('href',reactEle.props.target)
+    // document.setAttribute('href',reactEle.props.href)
+    // document.setAttribute('href',reactEle.props.target)
+    for(const prop in reactEle.props){
+        if(prop === "children") continue;
+        domEl.setAttribute(prop,reactEle.props[prop])
+    }
     container.appendChild(domEl)
 }
 
@@ -16,3 +20,4 @@ const reactEle ={
 }
 
 const mainContainer =document.querySelector('#root')
+customRendor(reactEle,mainContainer)
