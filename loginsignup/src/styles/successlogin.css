@@ -1,0 +1,6 @@
+body{
+    background-color: rgba(240, 178, 62, 0.79);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
