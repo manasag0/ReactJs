@@ -1,15 +1,11 @@
 
 import './App.css'
-
+import Card from './components/Card'
 function App() {
 
   return (
     <>
-
-    <h1 className="bg-">
-      Hello world!
-    </h1>
-
+    <Card />
     </>
   )
 }
