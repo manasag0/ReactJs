@@ -30,7 +30,7 @@ function App() {
 
     const copyPassword =()=>{
       window.navigator.clipboard.writeText(passward)
-      passwordRef.current?.focus()  }
+      passwordRef.current?.select()  }
 
   
 
