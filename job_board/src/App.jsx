@@ -1,34 +1,37 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
+const END_POINT = "https://hacker-news.firebaseio.com/v0/jobstories.json"
+const EXAMPLES = {
+  "by": "jamilbk",
+  "id": 35908337,
+  "score": 1,
+  "time": 1683838872,
+  "title": "Firezone (YC W22) is hiring Elixir and Rust engineers",
+  "type": "job",
+  "url": "https://www.ycombinator.com/companies/firezone/jobs"
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [items, setItems] = useState([])
+  function
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+       <h1>Hacker News</h1>
+       {
+        items.length<1?(
+          <p>Loading...</p>
+        ):(
+          <div>
+            <div className='items' role='list'>
+              <KobPosting />
+            </div>
+
+        )
+       }
+    </div>
   )
 }
 
